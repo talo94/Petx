@@ -1,3 +1,10 @@
-import React from "react";
+import React from 'react';
+import { CategoriesList } from './components/CategoriesList';
+import { GlobalStyle } from './GlobalStyles';
 
-export const App =()=> <h1>'holi</h1>
+export const App = () => (
+  <>
+    <GlobalStyle />
+    <CategoriesList />
+  </>
+);
