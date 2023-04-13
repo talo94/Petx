@@ -1,18 +1,20 @@
 import React
   from 'react';
-import { PhotoCard } from '../PhotoCard';
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
+import { PhotoCard } from '../components/PhotoCard';
 
 const GET_SINGLE_PHOTO = gql`
-    query getSinglePhoto($id: ID!) {
-        photo(id: $id) {
+    query getSinglePhoto($id:ID!) {
+        photo(id:$id) {
             id
             categoryId
             src
             likes
             userId
             liked
+        }
+    }
  `;
 
 const renderProp = ({ loading, error, data }) => {
@@ -22,8 +24,8 @@ const renderProp = ({ loading, error, data }) => {
   const { photo = {} } = data;
   return <PhotoCard {...photo} />;
 };
-export const PhotoCardWithQuery = () => (
-  <Query query={GET_SINGLE_PHOTO} variables={{ id: 1 }}>
+export const PhotoCardWithQuery = ({ id }) => (
+  <Query query={GET_SINGLE_PHOTO} variables={{ id }}>
     {renderProp}
   </Query>
 );
