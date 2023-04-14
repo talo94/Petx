@@ -1,10 +1,16 @@
 import React from 'react';
-import { CategoriesList } from './components/CategoriesList';
-import { GlobalStyle } from './GlobalStyles';
+import { Home } from './pages/Home';
+import { GlobalStyle } from './styles/GlobalStyles';
+import { Logo } from './components/Logo';
+import { Router } from '@reach/router';
 
 export const App = () => (
   <>
     <GlobalStyle />
-    <CategoriesList />
+    <Logo />
+    <Router>
+      <Home path='/' />
+      <Home path='/pet/:categoryId' />
+    </Router>
   </>
 );

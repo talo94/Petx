@@ -8,7 +8,7 @@
     "vercel-build": "npm run build",
     "lint": "semistandard",
     "lint-fix": "semistandard --fix",
-    "dev": "webpack-dev-server --open",
+    "dev": "webpack-dev-server --open --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,8 +34,15 @@
     "webpack-dev-server": "^4.13.2"
   },
   "dependencies": {
+    "@reach/router": "^1.3.4",
+    "apollo-boost": "^0.4.9",
+    "graphql": "^16.6.0",
+    "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
+    "react-apollo": "^3.1.5",
+    "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
     "styled-components": "^5.3.9"
   },
   "semistandard": {
