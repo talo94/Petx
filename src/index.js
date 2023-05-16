@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { App } from './App';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import OverviewContext from './contexts/OverviewContext';
 
 const container = document.getElementById('app');
 const root = createRoot(container);
@@ -12,4 +13,9 @@ const client = new ApolloClient({
 });
 
 root.render(
-  <ApolloProvider client={client}><App /></ApolloProvider>);
+  <OverviewContext.Provider>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </OverviewContext.Provider>
+);
