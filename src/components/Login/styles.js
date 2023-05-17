@@ -21,21 +21,6 @@ export const Input = styled.input`
   }
 `;
 
-export const ButtonLogin = styled.button`
-  background: #00d8ff;
-  border-radius: 5px;
-  color: #fff;
-  display: block;
-  height: 40px;
-  text-align: center;
-  margin-top: 45px;
-  width: 100%;
-
-  &[disabled] {
-    opacity: 0.3;
-  }
-`;
-
 export const Title = styled.h2`
   font-size: 16px;
   font-weight: 500;
