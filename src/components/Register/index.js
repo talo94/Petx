@@ -1,7 +1,8 @@
 import React from 'react';
 import { useInputValue } from '../../hooks/useInputValue';
-import { ButtonRegister, Error, Form, Input, LinkContainer, LinkRegister, LinkText, LoaderContainer, RegisterContainer, Title } from './styles';
+import { Error, Form, Input, LinkContainer, LinkRegister, LinkText, LoaderContainer, RegisterContainer, Title } from './styles';
 import { PawLoader } from '../Loader';
+import { SubmitButton } from '../SubmitButton';
 
 export const Register = ({ onSubmit, title, error, loading }) => {
   const email = useInputValue('');
@@ -20,7 +21,7 @@ export const Register = ({ onSubmit, title, error, loading }) => {
         <Input disabled={loading} type='text' placeholder='Email' {...email} />
         <Input disabled={loading} type='password' placeholder='Password' {...password} />
         {error && <Error>{error}</Error>}
-        <ButtonRegister disabled={loading}>Crear cuenta</ButtonRegister>
+        <SubmitButton disabled={loading}>Crear cuenta</SubmitButton>
       </Form>
       <LinkContainer>
         <LinkText>Ya tenés cuenta?</LinkText>
